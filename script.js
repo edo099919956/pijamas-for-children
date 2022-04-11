@@ -109,7 +109,6 @@ function events() {
                 "images/svg/favorite.svg";
         }
     });
-
 }
 events();
 
@@ -147,7 +146,7 @@ let minus_btn = document
         }
     });
 // //siza
-let size = "";
+let size;
 let size_element = document.querySelectorAll(".option>li");
 size_element.forEach((siz) => {
     siz.addEventListener("click", () => {
@@ -156,9 +155,10 @@ size_element.forEach((siz) => {
             .classList.remove("required_to_fill_out");
         document.querySelector(".container_3>p").innerHTML = siz.textContent;
         document.querySelector(".cnt_3_before").style.display = "none";
-        return (size = siz.textContent);
+        return size = siz
     });
 });
+
 // ----------------------------------------------------
 // // arr
 let somenewArr = [];
@@ -167,10 +167,11 @@ let btn2_close;
 let id = 0;
 
 function newArray() {
+
     let image = document.querySelector(".big_img").src;
     let obj = { id: id++ };
     obj.image = image;
-    obj.siz = size;
+    obj.size = `${size.textContent}`
     obj.count = count;
     somenewArr.push(obj);
     return somenewArr;
@@ -179,6 +180,7 @@ function newArray() {
 // someArr=newArray()
 
 document.querySelector(".add").addEventListener("click", () => {
+
     if (
         document.querySelector(".container_3>p").textContent !== "Выбрать размер"
     ) {
@@ -251,7 +253,6 @@ document.querySelector(".add").addEventListener("click", () => {
                     }
                 }
             })
-
         })
 
     } else {
